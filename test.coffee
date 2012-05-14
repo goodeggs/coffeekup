@@ -169,8 +169,8 @@ ck = require './src/coffeekup'
 render = ck.render
 
 @run = ->
-  {print} = require 'sys'
-  colors = {red: "\033[31m", redder: "\033[91m", green: "\033[32m", normal: "\033[0m"}
+  {print} = require 'util'
+  colors = {red: "\x1B[31m", redder: "\x1B[91m", green: "\x1B[32m", normal: "\x1B[0m"}
   printc = (color, str) -> print colors[color] + str + colors.normal
 
   [total, passed, failed, errors] = [0, [], [], []]
